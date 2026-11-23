@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Write Congress: AI Is Pricing Us Out of Our Own Hardware</title>
+<meta name="description" content="A free, no-ads, no-tracking tool to write your representative and senators about AI-driven memory and graphics card prices. Fill in your story, copy, send.">
+<style>
+  :root {
+    --bg: #101216;
+    --panel: #181b21;
+    --panel-2: #1f232b;
+    --line: #2c313b;
+    --text: #e8eaed;
+    --muted: #a3a9b4;
+    --accent: #f5a524;
+    --accent-ink: #1a1203;
+    --ok: #4cc38a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 56px 0 28px; border-bottom: 1px solid var(--line); }
+  .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; margin: 10px 0 16px; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 28px 0 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  .stat b { display: block; font-size: 28px; color: var(--accent); line-height: 1.2; }
+  .stat span { color: var(--muted); font-size: 15px; }
+  section { padding: 36px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 24px; margin: 0 0 6px; }
+  h2 .n { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 16px; margin-right: 10px; vertical-align: 3px; }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 12px 18px; border-radius: 8px; font-weight: 700; text-decoration: none;
+    border: 1px solid var(--accent); color: var(--accent); background: transparent; font-size: 16px; cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  label { display: block; font-weight: 600; margin: 0 0 6px; font-size: 15px; }
+  .hint { color: var(--muted); font-weight: 400; font-size: 14px; }
+  input[type=text], select, textarea {
+    width: 100%; padding: 11px 12px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--panel-2); color: var(--text); font: inherit; font-size: 16px;
+  }
+  textarea { min-height: 120px; resize: vertical; }
+  .field { margin-bottom: 14px; }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; }
+  .roles label {
+    display: inline-flex; align-items: center; gap: 8px; font-weight: 500; margin: 0;
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer;
+  }
+  .roles input { accent-color: var(--accent); }
+  .letter {
+    background: #f7f5ef; color: #1b1b1b; border-radius: 10px; padding: 26px 28px;
+    font: 16px/1.65 Georgia, "Times New Roman", serif; white-space: pre-wrap; border: 1px solid var(--line);
+  }
+  .letter .blank { background: #ffe7b0; border-radius: 3px; padding: 0 3px; }
+  .copyrow { display: flex; align-items: center; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+  .copied { color: var(--ok); font-weight: 700; min-height: 1.6em; }
+  .tips li { margin-bottom: 8px; }
+  .facts li { margin-bottom: 10px; }
+  .facts a { white-space: nowrap; }
+  footer { padding: 32px 0 60px; color: var(--muted); font-size: 15px; }
+  .note { background: var(--panel); border-left: 4px solid var(--accent); padding: 14px 16px; border-radius: 6px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Free · No ads · No tracking · Open source</div>
+    <h1>AI is pricing us out of our own hardware. Tell Congress.</h1>
+    <p class="lede">Memory and graphics card prices have exploded as AI data centers buy up the supply. Write your representative and senators in about two minutes: find them, add your own story, copy the letter, send it.</p>
+    <div class="stats">
+      <div class="stat"><b>400%+</b><span>projected rise in DRAM prices, start of 2024 to end of 2026 (J.P. Morgan)</span></div>
+      <div class="stat"><b>~70%</b><span>of all memory chips made in 2026 expected to go to AI data centers</span></div>
+      <div class="stat"><b>$1,999 → ~$5,500</b><span>RTX 5090: launch price vs. cheapest in stock, mid-November 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2><span class="n">1</span>Find who represents you</h2>
+    <p class="sub">You have one U.S. representative and two U.S. senators. Their offices count letters from constituents, so write to your own.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">Find your representative</a>
+      <a class="btn" href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener">Find your senators</a>
+    </div>
+    <p class="sub" style="margin-top:14px">Each office's website has a "Contact" page with a web form. That's where your letter goes.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Add your story</h2>
+    <p class="sub">Offices give far more weight to letters in a real person's own words than to identical copies. Your details are what make this count. Nothing you type leaves your browser.</p>
+
+    <div class="grid">
+      <div class="field">
+        <label for="to">Writing to</label>
+        <select id="to">
+          <option value="Representative">My representative</option>
+          <option value="Senator">One of my senators</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="official">Their last name <span class="hint">(e.g. Smith)</span></label>
+        <input type="text" id="official" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="place">Your city and state</label>
+        <input type="text" id="place" placeholder="Austin, Texas" autocomplete="address-level2">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>I'm writing as a… <span class="hint">(pick any)</span></label>
+      <div class="roles" id="roles">
+        <label><input type="checkbox" value="a gamer"> Gamer</label>
+        <label><input type="checkbox" value="a PC builder"> PC builder</label>
+        <label><input type="checkbox" value="a small business owner"> Small business owner</label>
+        <label><input type="checkbox" value="an IT professional"> IT professional</label>
+        <label><input type="checkbox" value="a content creator"> Creator / streamer</label>
+        <label><input type="checkbox" value="a student"> Student</label>
+        <label><input type="checkbox" value="a parent"> Parent</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="story">What this has cost you <span class="hint">(the most important part, even one or two sentences)</span></label>
+      <textarea id="story" placeholder="Examples: My graphics card died and a replacement now costs three times what I paid. / I've had to put off upgrading my small business's computers. / My kid saved for a console and the price went up twice. / A friend in our gaming group couldn't afford to replace their PC and stopped playing with us."></textarea>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Copy it and send it</h2>
+    <p class="sub">Your letter updates as you type. Copy it, open your official's contact form, and paste it into the message box.</p>
+    <div class="letter" id="letter" aria-live="polite"></div>
+    <div class="copyrow">
+      <button class="btn primary" id="copy" type="button">Copy letter</button>
+      <span class="copied" id="copied" role="status"></span>
+    </div>
+    <ul class="tips" style="margin-top:22px">
+      <li><b>Send three times:</b> once to your representative and once to each senator. Change the name at the top for each.</li>
+      <li><b>Pick a topic</b> like "Technology," "Commerce" or "Consumer Protection" if the form asks for one.</li>
+      <li><b>Want to do more?</b> Call their office and say: "I'm a constituent calling about AI-driven memory and graphics card prices. I'd like the member to push for hearings and an FTC and DOJ investigation." It takes a minute and gets tallied.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The facts behind the letter</h2>
+    <p class="sub">Every claim in the letter comes from public reporting, court records or company filings.</p>
+    <ul class="facts">
+      <li>J.P. Morgan projects DRAM prices will rise more than 400% from the start of 2024 to the end of 2026, adding an estimated 0.2 to 0.4 points to U.S. core inflation. <a href="https://ai2.work/blog/dram-prices-quadruple-as-chip-buyers-lobby-washington-for-relief" target="_blank" rel="noopener">source</a></li>
+      <li>AI data centers are expected to consume about 70% of all memory chips made in 2026. <a href="https://ctse.aei.org/financial-markets-are-sounding-the-alarm-on-memory-chips-policymakers-should-be-listening/" target="_blank" rel="noopener">source</a></li>
+      <li>Samsung, SK Hynix and Micron make nearly all of the world's DRAM. Micron exited the consumer (Crucial) business entirely to focus on larger customers. <a href="https://www.tomshardware.com/pc-components/dram/micron-is-killing-crucial-ssds-and-memory-in-ai-pivot-company-refocuses-on-hbm-and-enterprise-customers" target="_blank" rel="noopener">source</a></li>
+      <li>A federal class action (No. 3:26-cv-06345, N.D. Cal.) alleges the three coordinated to restrict DRAM supply. On November 14, 2026, the judge denied their motion to dismiss. The allegations have not been proven. <a href="https://openclassactions.com/news/samsung-sk-hynix-micron-dram-lawsuit-motion-to-dismiss-denied.php" target="_blank" rel="noopener">source</a></li>
+      <li>Nvidia's supply commitments climbed to $390 billion, mostly multi-year memory deals, and the same filing admits higher memory prices are hurting consumer PC demand. <a href="https://www.pcworld.com/article/3289334/nvidia-admits-soaring-memory-prices-are-hurting-pc-buyers.html" target="_blank" rel="noopener">source</a></li>
+      <li>In mid-November 2026, every RTX 5090 listed at $1,999.99 was out of stock; the cheapest in stock was about $5,500. <a href="https://pcpartpicker.com/products/video-card/#c=587&amp;sort=-price&amp;page=1" target="_blank" rel="noopener">PCPartPicker</a></li>
+      <li>The Stopping Grinch Bots Act (S.3516 / H.R.6822) would extend the federal anti-bot law from event tickets to online retail. <a href="https://www.govinfo.gov/content/pkg/BILLS-119s3516is/html/BILLS-119s3516is.htm" target="_blank" rel="noopener">bill text</a></li>
+    </ul>
+    <p class="note">Much of what the public knows about GPU smuggling and the consumer side of this crisis comes from independent journalists, especially <a href="https://www.youtube.com/@GamersNexus" target="_blank" rel="noopener">Gamers Nexus</a>, not regulators.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Made by a PC builder and small business owner in Texas who got tired of waiting. This page has no ads, no analytics, no cookies and collects nothing: everything you type stays in your browser. The code is public, so anyone can check that, copy it or improve it.</p>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fields = ["to", "official", "name", "place", "story"];
+
+  function val(id) { return ($(id).value || "").trim(); }
+
+  function roles() {
+    var picked = Array.prototype.slice.call(document.querySelectorAll("#roles input:checked")).map(function (b) { return b.value; });
+    if (!picked.length) return "";
+    if (picked.length === 1) return picked[0];
+    return picked.slice(0, -1).join(", ") + " and " + picked[picked.length - 1];
+  }
+
+  function blank(text, fallback) {
+    return text ? { t: text, b: false } : { t: fallback, b: true };
+  }
+
+  function build() {
+    var to = val("to");
+    var official = blank(val("official"), "[Last name]");
+    var name = blank(val("name"), "[Your name]");
+    var place = blank(val("place"), "[City, State]");
+    var who = roles();
+    var story = blank(val("story"), "[Your story: what this has cost you, in your own words.]");
+
+    var parts = [];
+    parts.push({ t: "Dear " + to + " " });
+    parts.push(official);
+    parts.push({ t: ",\n\nI'm your constituent in " });
+    parts.push(place);
+    parts.push({ t: (who ? ", and I'm " + who : "") + ". I'm writing about the soaring cost of computer memory and graphics cards, driven by the AI data center build-out.\n\n" });
+    parts.push(story);
+    parts.push({ t: "\n\nJ.P. Morgan projects DRAM prices will rise more than 400% from the start of 2024 to the end of 2026, adding an estimated 0.2 to 0.4 points to core inflation. AI data centers are expected to take about 70% of all memory made this year, and memory is in nearly everything families buy: phones, laptops, cars, appliances. Graphics cards sell for two to three times their launch prices, which exist only on cards that are always out of stock. Nvidia's own filing shows $390 billion in supply commitments, mostly memory, and admits high memory prices are hurting consumer PC demand.\n\nThree companies make nearly all of the world's DRAM. One of them, Micron, left the consumer market entirely. A federal judge has refused to dismiss a class action alleging the three coordinated to restrict supply.\n\nI'm asking you to:\n- Hold public hearings with Samsung, SK Hynix, Micron and Nvidia under oath on how consumer supply is being allocated\n- Push the FTC and the Justice Department to investigate possible coordination of memory supply and advertised prices no one can actually buy at\n- Co-sponsor the Stopping Grinch Bots Act (S.3516 / H.R.6822) to stop bots from stripping retail shelves\n- Tie CHIPS Act funding to supplying American consumers and small businesses, not only AI customers\n- Enforce chip export controls\n\nSome of this may be legal. Legal is not the same as right. Please tell me what you will do.\n\nSincerely,\n" });
+    parts.push(name);
+    parts.push({ t: "\n" });
+    parts.push(place);
+
+    var box = $("letter");
+    box.textContent = "";
+    parts.forEach(function (p) {
+      if (p.b) {
+        var s = document.createElement("span");
+        s.className = "blank";
+        s.textContent = p.t;
+        box.appendChild(s);
+      } else {
+        box.appendChild(document.createTextNode(p.t));
+      }
+    });
+    return parts.map(function (p) { return p.t; }).join("");
+  }
+
+  fields.forEach(function (id) { $(id).addEventListener("input", build); $(id).addEventListener("change", build); });
+  document.querySelectorAll("#roles input").forEach(function (b) { b.addEventListener("change", build); });
+
+  $("copy").addEventListener("click", function () {
+    var text = build();
+    var done = function () {
+      var missing = /\[(Last name|Your name|City, State|Your story)/.test(text);
+      $("copied").textContent = missing ? "Copied. Fill in the highlighted blanks before sending." : "Copied! Now paste it into the contact form.";
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) { $("copied").textContent = "Couldn't copy automatically. Select the letter and copy it by hand."; }
+      document.body.removeChild(ta);
+    }
+  });
+
+  build();
+})();
+</script>
+</body>
+</html>
